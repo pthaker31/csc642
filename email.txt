@@ -1,0 +1,22 @@
+TO: Petkovic@sfsu.edu
+
+SUBJECT: CSC 642 Summer 2020 Individual Assignment Priyanka Thaker
+
+Hello Professor Petkovic,
+
+Here is my individual assignment [https://uninflamed-temperat.000webhostapp.com/]. This free website is hosted by 000webhost.com. My source code is available on GitHub [https://github.com/pthaker31/csc642].
+
+For development, I used simple HTML and Javascript.
+
+For field validation, I used Javascript that validate length and regular expressions on certain fields.
+
+For maps I used a wrapped around Google Maps [https://www.embedgooglemap.net/]. This handles the reverse geocoding of address to latitude / longitude values and drops a pin on a Google Map.
+
+For Captcha, I used a custom generated Captcha which displays random numbers in a certain font and requires the user to type those same numbers in.
+
+Here I list resources I used in order to design and develop this assignment:
+- Captcha [https://allwebco-templates.com/support/script-simple-captcha.htm], I used this website to learn how to build a custom Captcha without external dependencies (last accessed July 11th, 2020)
+- Google Maps [https://www.embedgooglemap.net/], I used this to learn how to generate an iframe to render a Google Map of a user input address (last accessed July 11th, 2020)
+
+Regards,
+Priyanka Thaker
