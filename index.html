@@ -1,0 +1,365 @@
+<script src="script.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* COMPACT CAPTCHA */
+
+.capbox {
+	background-color: #BBBBBB;
+	background-image: linear-gradient(#BBBBBB, #9E9E9E);
+	border: #2A7D05 0px solid;
+	border-width: 2px 2px 2px 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	padding: 5px 8px 5px 8px;
+	border-radius: 4px 4px 4px 4px;
+	}
+
+.capbox-inner {
+	font: bold 12px arial, sans-serif;
+	color: #000000;
+	background-color: #E3E3E3;
+	margin: 0px auto 0px auto;
+	padding: 3px 10px 5px 10px;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	}
+
+#CaptchaDiv {
+	color: #000000;
+	font: normal 25px Impact, Charcoal, arial, sans-serif;
+	font-style: italic;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	user-select: none;
+	display: inline-block;
+	padding: 3px 14px 3px 8px;
+	margin-right: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput {
+	border: #38B000 2px solid;
+	margin: 3px 0px 1px 0px;
+	width: 105px;
+	}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  top: 50%;
+  margin-top: 6px;
+}
+
+.col-12 {
+  float: left;
+  width: 12%;
+  top: 50%;
+  margin-top: 6px;
+}
+
+.col-13 {
+  float: left;
+  width: 13%;
+  top: 50%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  top: 50%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>CSC 642 Summer 2020 Individual Assignment - Priyanka Thaker</h2>
+<h3>Data survey form</h3>
+<p> </p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name *</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="First Name" maxlength="40">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name *</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Last Name" maxlength="40">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="address">Address *</label>
+    </div>
+    <div class="col-25">
+      <input type="text" id="address" name="address" placeholder="Street address" maxlength="40">
+    </div>
+    <div class="col-25">
+      <input type="text" id="city" name="city" placeholder="City" maxlength="20">
+    </div>
+    <div class="col-12">
+      <input type="text" id="state" name="state" placeholder="CA" maxlength="2">
+    </div>
+    <div class="col-13">
+      <input type="text" id="zip" name="zip" placeholder="94000" maxlength="5">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="dob">Date of Birth *</label>
+    </div>
+    <div class="col-75">
+        <input type="date" id="dob" min="1990-01-01" max="2020-06-20">
+        <label for="date"></label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="education">Education Level</label>
+    </div>
+    <div class="col-75">
+      <select id="education" name="education">
+        <option value="---">---</option>
+        <option value="hs">High School</option>
+        <option value="c">College</option>
+        <option value="gs">Graduate Studies</option>
+        <option value="gs">Ph.D</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="height">Height</label>
+    </div>
+    <div class="col-25">
+      <input type="number" id="heightft" name="feet" placeholder="Feet" max="8">
+      <label for="heightft"></label>
+    </div>
+    <div class="col-25">
+      <input type="number" id="heightin" name="inches" placeholder="Inches" max="11">
+      <label for="heightin"></label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="phone">Phone Number *</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="phone" name="phone" placeholder="1234567" maxlength="7">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="email">Email Address *</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="email" name="email" placeholder="example@example.com">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="email">Confirm Email Address *</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="email2" name="email2" placeholder="example@example.com">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="terms">I agree to terms *</label>
+    </div>
+    <div class="col-75">
+        <input type="checkbox" id="check" name="check">
+        <label for="check"></label>
+    </div>
+  </div>
+
+    <br>
+    <div class="capbox">
+        <div id="CaptchaDiv"></div>
+        <div class="capbox-inner">
+            Type the number:<br>
+            <input type="hidden" id="txtCaptcha">
+            <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+        </div>
+    </div>
+    <br>
+    <br>
+
+  <div class="col-25">
+    <button type="button" onclick="validate()">Click Me!</button>
+  </div>
+  </form>
+</div>
+
+<script>
+    function validate() {
+        var stringArray = []
+        if (document.getElementById("fname").value.length == 0) {
+            stringArray.push("First name is required!")
+        }
+        if (document.getElementById("lname").value.length == 0) {
+            stringArray.push("Last name is required!")
+        }
+        if (!validAddress()) {
+            stringArray.push("Please enter a valid address!")
+        }
+        if (document.getElementById("dob").value.length == 0) {
+            stringArray.push("Date of birth is required!")
+        }
+        if (document.getElementById("phone").value.length == 0) {
+            stringArray.push("Phone number is required!")
+        } else if (!isValidPhone()) {
+            stringArray.push("Please enter a valid phone number in the format 1234567")
+        }
+        if (document.getElementById("email").value.length == 0) {
+            stringArray.push("Email is required!")
+        } else if (!emailIsValid()) {
+            stringArray.push("Email is invalid!")
+        } else if (!emailMatches()) {
+            stringArray.push("Emails must match!")
+        }
+
+        if (!document.getElementById("check").checked) {
+            stringArray.push("Please agree to terms!")
+        }
+
+        if (!isCaptchaValid()) {
+            stringArray.push("Please enter correct Captcha vaue!")
+        }
+
+        if (stringArray.length == 0) {
+            storeItems()
+            window.location.href = "validate.html"
+        } else {
+            alert(stringArray.join("\r\n"))
+        }
+    }
+
+    function validAddress() {
+        return document.getElementById("address").value.length != 0 && document.getElementById("city").value.length != 0 && document.getElementById("state").value.length == 2 &&
+        document.getElementById("zip").value.match(/^\d{5}$/)
+    }
+
+    function isValidPhone() {
+        return document.getElementById("phone").value.match(/^\d{7}$/)
+    }
+
+    function emailIsValid() {
+        return document.getElementById("email").value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    }
+
+    function emailMatches() {
+        return document.getElementById("email").value == document.getElementById("email2").value
+    }
+
+    function storeItems() {
+        localStorage.setItem("firstName", document.getElementById("fname").value)
+        localStorage.setItem("lastName", document.getElementById("lname").value)
+        localStorage.setItem("address", document.getElementById("address").value + " " + document.getElementById("city").value + " " + document.getElementById("state").value + " " + document.getElementById("zip").value)
+        localStorage.setItem("dob", document.getElementById("dob").value)
+
+        var e = document.getElementById("education")
+        var value = e.options[e.selectedIndex].text
+        localStorage.setItem("education", value)
+
+        if (document.getElementById("heightft").value.length != 0 && document.getElementById("heightin").value.length != 0) {
+            localStorage.setItem("height", document.getElementById("heightft").value + "\' " + document.getElementById("heightin").value + "\"")
+        } else {
+            localStorage.setItem("height", "")
+        }
+
+        localStorage.setItem("phone", document.getElementById("phone").value)
+        localStorage.setItem("email", document.getElementById("email").value)
+    }
+
+    var a = Math.ceil(Math.random() * 9)+ ''
+    var b = Math.ceil(Math.random() * 9)+ ''
+    var c = Math.ceil(Math.random() * 9)+ ''
+    var d = Math.ceil(Math.random() * 9)+ ''
+    var e = Math.ceil(Math.random() * 9)+ ''
+
+    var code = a + b + c + d + e
+    document.getElementById("txtCaptcha").value = code
+    document.getElementById("CaptchaDiv").innerHTML = code
+
+    function isCaptchaValid() {
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value)
+        var str2 = removeSpaces(document.getElementById('CaptchaInput').value)
+        return str1 == str2
+    }
+
+    function removeSpaces(string) {
+        return string.split(' ').join('')
+    }
+
+</script>
+</body>
+</html>
